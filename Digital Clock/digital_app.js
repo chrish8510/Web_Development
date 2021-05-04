@@ -1,0 +1,22 @@
+function currentTime() {
+    let date = new Date(); /* creating object of Date class */
+    let hour = date.getHours();
+    let min = date.getMinutes();
+    let sec = date.getSeconds();
+    hour = updateTime(hour);
+    min = updateTime(min);
+    sec = updateTime(sec);
+    document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
+      let t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+  }
+  
+  function updateTime(s) {
+    if (s < 10) {
+      return "0" + s;
+    }
+    else {
+      return s;
+    }
+  }
+  
+  currentTime(); /* calling currentTime() function to initiate the process */
